@@ -1,0 +1,42 @@
+//loader annimations
+@keyframes hide-loader {
+  0% {
+    z-index: 100;
+    opacity: 1;
+  }
+  100% {
+    z-index: -100;
+    opacity: 0;
+  }
+}
+
+
+@keyframes dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(280deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+//display menus
+@keyframes loadtext {
+  0% {
+    opacity: 0;
+    margin-top: 1rem;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0rem;
+  }
+}
+
+//Hide home page during loader
+@keyframes hide-home {
+  from {max-height: 0;}
+  to {max-height: 1000rem;}
+}

@@ -1,0 +1,19 @@
+{
+  "name": "p5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "recipes.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Syl20cros/SylvainCros_5_27052021.git"
+  },
+  "author": "sc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Syl20cros/SylvainCros_5_27052021/issues"
+  },
+  "homepage": "https://github.com/Syl20cros/SylvainCros_5_27052021#readme"
+}

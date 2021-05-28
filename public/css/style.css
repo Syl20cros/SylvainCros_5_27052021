@@ -1,0 +1,273 @@
+@charset "UTF-8";
+/* Eléments principaux et communs de la page */
+body {
+  background: white;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  margin: auto;
+  max-width: 1240px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+
+body {
+  font-family: "lato", sans-serif;
+  font-size: 12px;
+  color: #000;
+}
+
+h1 {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 47px;
+  color: #D04F4F;
+}
+
+h2 {
+  font-family: "lato", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+li {
+  list-style-type: none;
+  color: #000;
+}
+
+@keyframes hide-loader {
+  0% {
+    z-index: 100;
+    opacity: 1;
+  }
+  100% {
+    z-index: -100;
+    opacity: 0;
+  }
+}
+@keyframes dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(280deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loadtext {
+  0% {
+    opacity: 0;
+    margin-top: 1rem;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0rem;
+  }
+}
+@keyframes hide-home {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 1000rem;
+  }
+}
+/* FOOTER */
+.footer {
+  background: #E7E7E7;
+  padding-left: 1.8rem;
+  padding-right: 1.8rem;
+  padding-top: 1.5rem;
+  color: white;
+}
+.footer__header {
+  font-size: 1.6rem;
+}
+.footer__nav {
+  padding-left: 0rem;
+  padding-bottom: 2rem;
+  color: white;
+  margin-top: 1.3rem;
+}
+.footer__nav__link {
+  margin-bottom: 0.8rem;
+}
+.footer__nav i {
+  width: 1.8rem;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  align-items: center;
+}
+
+.header img {
+  height: 46.29px;
+  width: 50.48px;
+}
+
+main {
+  margin: 0 1rem;
+}
+
+#research__principal__text-area {
+  width: 100%;
+  background: #E7E7E7;
+  height: 69px;
+  border-radius: 5px;
+  border: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 18px;
+  color: black;
+  margin-bottom: 1.5rem;
+  padding-right: 70px;
+  padding-left: 1rem;
+}
+
+.research__principal__button {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 0 5px 5px 0;
+  position: absolute;
+  width: 4rem;
+  height: 69px;
+  margin-left: -69px;
+  font-size: 1.5rem;
+}
+
+.research__tagSelected {
+  margin-bottom: 1.5rem;
+}
+
+.research__tag {
+  margin-bottom: 1.5rem;
+}
+.research__tag__lists {
+  border: none;
+  height: 69px;
+  width: 170px;
+  color: white;
+  border-radius: 5px;
+  font-size: 18px;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#ingredients-select {
+  background: #3282F7;
+}
+
+#appareil-select {
+  background: #68D9A4;
+}
+
+#ustensiles-select {
+  background: #ED6454;
+}
+
+.research__tag select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.fa-chevron-down {
+  position: relative;
+  right: 2rem;
+  color: white;
+}
+
+#ingredients-select:focus .fa-chevron-down {
+  transform: rotate(180deg);
+  transition: 1s;
+}
+
+.menus {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (min-width: 767px) {
+  .menus {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.menu {
+  width: 100%;
+  height: 364px;
+  border-radius: 5px;
+  background: #E7E7E7;
+  margin-bottom: 1rem;
+}
+@media (min-width: 767px) {
+  .menu {
+    width: 380px;
+  }
+}
+.menu__img {
+  width: 100%;
+  height: 178px;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+.menu__zone-text-upper {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+}
+.menu__zone-text-upper__time {
+  display: flex;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.menu__zone-text-upper__time__text {
+  padding-left: 0.8rem;
+}
+.menu__zone-text-upper__time__ico {
+  margin: auto;
+}
+.menu__zone-text-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  font-family: "lato", sans-serif;
+  font-style: normal;
+  font-size: 12px;
+}
+.menu__zone-text-bottom__ingredients {
+  width: 50%;
+}
+.menu__zone-text-bottom__recipe {
+  width: 50%;
+}
+
+/*# sourceMappingURL=style.css.map */

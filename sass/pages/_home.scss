@@ -1,0 +1,162 @@
+////// HEADER //////
+.header {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  align-items: center;
+}
+
+.header img {
+  height: 46.29px;
+  width: 50.48px;
+}
+
+main {
+  margin: 0 1rem;
+}
+
+////// RESEARCH BAR //////
+
+#research__principal {
+  
+}
+
+#research__principal__text-area {
+  width: 100%;
+  background: $colour-bg-secondary;
+  height: 69px;
+  border-radius: 5px;
+  border: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 18px;
+  color: black;
+  margin-bottom: 1.5rem;
+  padding-right: 70px;
+  padding-left: 1rem;
+}
+
+.research__principal__button {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 0 5px 5px 0;
+  position: absolute;
+  width: 4rem;
+  height: 69px;
+  margin-left: -69px;
+  font-size: 1.5rem;
+}
+
+
+////// TAG SELECTED //////
+.research__tagSelected {
+margin-bottom: 1.5rem;
+}
+
+////// RESEARCH TAG //////
+
+.research__tag {
+  margin-bottom: 1.5rem;
+  &__lists{
+    border: none;
+    height: 69px;
+    width: 170px;
+    color: white;
+    border-radius: 5px;
+    font-size: 18px;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+#ingredients-select {
+  background: $colour-ingredients;
+}
+
+#appareil-select {
+  background: $colour-appareil;
+}
+
+#ustensiles-select {
+  background: $colour-ustensiles;
+}
+
+.research__tag select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.fa-chevron-down{
+  position: relative;
+  right: 2rem;
+  color: white;
+}
+
+
+#ingredients-select:focus .fa-chevron-down{
+  transform: rotate(180deg);
+  transition: 1s;
+}
+
+////// MENUS //////
+.menus {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include desktop {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.menu {
+  width:  100%;
+  height: 364px;
+  border-radius: 5px;
+  background: $colour-bg-secondary;
+  margin-bottom: 1rem;
+  @include desktop {
+    width:  380px;
+  }
+  &__img {
+    width: 100%;
+    height: 178px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+  }
+  &__zone-text-upper {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    &__time{
+      display: flex;
+      font-size: 1rem;
+      font-weight: 700;
+      &__text {
+        padding-left: 0.8rem;
+      }
+      &__ico {
+        margin:auto;
+      }
+    }
+  }
+  &__zone-text-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'lato' , sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    &__ingredients {
+      width: 50%;
+    }
+    &__recipe {
+      width: 50%;
+    }
+  }
+}
