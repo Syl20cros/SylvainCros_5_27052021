@@ -56,56 +56,91 @@ margin-bottom: 1.5rem;
 }
 
 ////// RESEARCH TAG //////
-
-.research__tag {
-  margin-bottom: 1.5rem;
-  &__lists{
-    border: none;
-    height: 69px;
-    width: 170px;
-    color: white;
-    border-radius: 5px;
-    font-size: 18px;
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
+.researchTag {
+  @include desktop {
+    display: flex;
   }
 }
 
-#ingredients-select {
+.researchTag div{
+margin-bottom: 0.5rem;
+}
+
+.research__tag {
+  height: 69px;
+  width: 100%;
+  color: white;
+  border-radius: 5px;
+  font-size: 18px;
+  padding-left: 1.5rem;
+  padding-right: 1rem;
+  background: $colour-ingredients;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  cursor: pointer;
+  @include desktop {
+    width: 170px;
+  }
+}
+
+.research__liste{
+  display: none;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  position: absolute;
+  padding: 1rem;
+  margin-top: -5px;
+  max-width: 100vw;
+  margin-right: 1rem;
+  border-radius: 0 0 5px 5px;
+  @include desktop {
+    width: 45vw;
+    max-width: 800px;
+  }
+}
+
+.research__liste__item {
+  width: 10rem;
+  display: inline-flex;
+}
+
+.research a {
+  color: white;
+  font-size: 18px;
+}
+
+.modalTag-show {
+  display: block;
+}
+
+.research__tag--bigger{
+  @include desktop {
+  width: 45vw;
+  max-width: 800px;
+  }
+}
+
+.research__tag--ingredients, .research__liste--ingredients {
   background: $colour-ingredients;
 }
 
-#appareil-select {
+.research__tag--appareils, .research__liste--appareils {
   background: $colour-appareil;
 }
 
-#ustensiles-select {
+.research__tag--ustensiles, .research__liste--ustensiles {
   background: $colour-ustensiles;
 }
 
-.research__tag select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.fa-chevron-down{
-  position: relative;
-  right: 2rem;
-  color: white;
-}
-
-
-#ingredients-select:focus .fa-chevron-down{
-  transform: rotate(180deg);
-  transition: 1s;
-}
 
 ////// MENUS //////
 .menus {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-top: 2rem;
   @include desktop {
     flex-direction: row;
     flex-wrap: wrap;
