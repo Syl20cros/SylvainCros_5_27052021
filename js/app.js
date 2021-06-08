@@ -35,7 +35,7 @@ const resultDeLaRecherche = {
         "ustensils": ["cuillère à Soupe", "verres", "presse citron" ]
     }],
     "ustensils": ["cuillère à Soupe", "verres", "presse citron"],
-    "ingredientsx": ["Lait de vache", "Jus de citron","Crème de coco","Sucre", "Glaçons"],
+    "ingredients": ["Lait de vache", "Jus de citron","Crème de coco","Sucre", "Glaçons"],
     "appareils": ["Blender","Appareil 2","Appareil 3"],
     "quantity" : ["400", "2", "2", "30", ""],
     "unit" : ["ml", "", "cuillères à soupe", "grammes", ""]
