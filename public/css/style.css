@@ -123,6 +123,21 @@ main {
 
 .research__tagSelected {
   margin-bottom: 1.5rem;
+  display: flex;
+}
+.research__tagSelected__tag {
+  background: #68D9A4;
+  width: 107px;
+  height: 37px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-right: 1rem;
 }
 
 @media (min-width: 767px) {
@@ -153,6 +168,7 @@ main {
 @media (min-width: 767px) {
   .research__tag {
     width: 170px;
+    margin-right: 1rem;
   }
 }
 
@@ -179,7 +195,7 @@ main {
   display: inline-flex;
 }
 
-.research a {
+.research li {
   color: white;
   font-size: 18px;
 }
@@ -195,16 +211,28 @@ main {
   }
 }
 
-.research__tag--ingredients, .research__liste--ingredients {
+.research__tag--ingredients,
+.research__liste--ingredients {
   background: #3282F7;
 }
 
-.research__tag--appareils, .research__liste--appareils {
+.research__tag--appareils,
+.research__liste--appareils {
   background: #68D9A4;
 }
 
-.research__tag--ustensiles, .research__liste--ustensiles {
+.research__tag--ustensiles,
+.research__liste--ustensiles {
   background: #ED6454;
+}
+
+.fa-chevron-down--rotate {
+  transform: rotate(180deg);
+  transition: 1s;
+}
+
+.research__liste .itemSelected {
+  color: #797979;
 }
 
 .menus {
