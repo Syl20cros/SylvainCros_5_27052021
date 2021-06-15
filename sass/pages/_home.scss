@@ -46,33 +46,55 @@ main {
 }
 
 ////// TAG SELECTED //////
-.research__tagSelected {
+
+
+#tagsSelected {
   margin-bottom: 1.5rem;
   display: flex;
-  &__tag {
-    background: $colour-appareil;
-    width: 107px;
-    height: 37px;
-    border-radius: 5px;
-    font-size: 14px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-right: 1rem;
-  }
+}
+
+.research__liste .tagSelected {
+  color: #797979;
+}
+
+.research__liste .tagNotSelected {
+  color: white;
+}
+
+.tagsSelectedItem {
+  width: 107px;
+  height: 37px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-right: 1rem;
+}
+
+.tagsSelectedItem--ingrediends {
+  background: $colour-ingredients;
+}
+
+.tagsSelectedItem--appareils {
+  background: $colour-appareil;
+}
+
+.tagsSelectedItem--ustensiles {
+  background: $colour-ustensiles;
 }
 
 ////// RESEARCH TAG //////
-.researchTag {
+#researchTag {
   @include desktop {
     display: flex;
   }
 }
 
-.researchTag div {
+#researchTag div {
   margin-bottom: 0.5rem;
 }
 
@@ -117,7 +139,7 @@ main {
   display: inline-flex;
 }
 
-.research li {
+.research__liste__item {
   color: white;
   font-size: 18px;
 }
@@ -158,11 +180,12 @@ main {
 }
 
 ////// MENUS //////
-.menus {
+#menus {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-top: 2rem;
+  align-content:flex-start;
   @include desktop {
     flex-direction: row;
     flex-wrap: wrap;

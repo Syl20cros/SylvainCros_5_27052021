@@ -1,85 +1,55 @@
-import {displayModalIngredients} from './tag/tag-display.js';
+// Import du menu liste deroulante tag
+import {displayModalAppareils} from './tag/tag-display.js';
 
-const resultDeLaRecherche = {
-    "recipies": [{
-        "id": 1,
-        "name" : "Limonade de Coco",
-        "servings" : 1,
-        "ingredients": [
-            {
-                "ingredient" : "Lait de coco",
-                "quantity" : 400,
-                "unit" : "ml"
-            },
-            {
-                "ingredient" : "Jus de citron",
-                "quantity" : 2
-            },
-            {
-                "ingredient" : "Crème de coco",
-                "quantity" : 2,
-                "unit" : "cuillères à soupe"
-            },
-            {
-                "ingredient" : "Sucre",
-                "quantite" : 30,
-                "unit" : "grammes"
-            },
-            {
-                "ingredient": "Glaçons"
-            }
-        ],
-        "time": 10,
-        "description": "Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée",
-        "appliance": "Blender",
-        "ustensils": ["cuillère à Soupe", "verres", "presse citron" ]
-    }],
-    "ustensils": ["cuillère à Soupe", "verres", "presse citron"],
-    "ingredients": ["Lait de vache", "Jus de citron","Crème de coco","Sucre", "Glaçons"],
-    "appareils": ["Blender","Appareil 2","Appareil 3"],
-    "quantity" : ["400", "2", "2", "30", ""],
-    "unit" : ["ml", "", "cuillères à soupe", "grammes", ""]
-};
+// Import du fake resultat de recherche
+import resultDeLaRecherche from './data/Fixture.js';
 
-//////////// creer Les Trois Listes Select
-function creerLesTroisListesSelect(resultDeLaRecherche) {
-    creerUneSelectTags('ingredients', resultDeLaRecherche.ingredients);
-    creerUneSelectTags('appareils', resultDeLaRecherche.appareils);
-    creerUneSelectTags('ustensiles', resultDeLaRecherche.ustensils);
-}
+// Import de la classe qui construit les 3 selects (tags ingrédients, ustensiles, appareils)
+import selectDomBuilder from './dom/Select.js';
 
-function creerUneSelectTags(listeSelectId, tagsValue) {
-    let html = '';
-
-    tagsValue.forEach(function (value, index) {
-        html += `<li class="research__liste__item" href="#">${value}</li>`;
-    });
-   
-    let listSelect = document.querySelector('.research__liste--' + listeSelectId);
-    listSelect.insertAdjacentHTML('beforeend', html);
-}
-
-creerLesTroisListesSelect(resultDeLaRecherche);
+// Import de la classe qui construit la liste des recettes
+import recipieDomBuilder from './dom/Recipie.js';
 
 
+/********************** liste deroulante ************************************/
+const domSelectBuilder = new selectDomBuilder();
+
+// au click d'un tag sa l'ajoute a la liste des tags selectionnés ou le retire
+domSelectBuilder.dispatchEvent();
+
+// affiche les trois listes deroulantes
+domSelectBuilder.creerLesTroisListesSelect(resultDeLaRecherche);
+
+// Ferme un tag au clicsur X
+domSelectBuilder.closeTagByX();
+
+
+/********************** Affichage recette ***********************************/
+const domRecipieBuilder = new recipieDomBuilder();
+
+// Afficher les blocs recette
+domRecipieBuilder.afficherLesBlocsRecettes(resultDeLaRecherche.recipies);
+
+// Remplissage des blocs recette
+domRecipieBuilder.afficherContenuRecettes(resultDeLaRecherche.recipies);
+
+
+
+/*
 ///// au click d'un tag d'une liste deroulante
-document.querySelector('.researchTag').addEventListener('click', function(e){
-    var element = e.target;
-    console.log('click sur un tag');
-});
-
-
 document.querySelectorAll('.research__liste__item').forEach((element) => {
     element.addEventListener('click', function(e){
         element.classList.add('itemSelected');
         var newDivTag = document.createElement('div');// creer une nouvelle div au clic
         newDivTag.classList.add('research__tagSelected__tag');//ajout d une class a la div
-        newDivTag.innerHTML="name tag"+'<i class="far fa-times-circle"></i>';//contenu de la div
-        document.querySelector('.research__tagSelected').appendChild(newDivTag)
+        newDivTag.innerHTML= element.name+'<i class="far fa-times-circle"></i>';//contenu de la div
+        document.querySelector('.research__tagSelected').appendChild(newDivTag);
+        console.log(element);
     });
 })
+*/
 
-
+/*
 ///// Afficher les recettes
 afficherLesRecettes(resultDeLaRecherche.recipies);
 
@@ -114,3 +84,4 @@ function ListeIngredientsRecettes(ingredients) {
     });
     document.querySelector('.menu__zone-text-bottom__ingredients').insertAdjacentHTML('beforeend', html);
 }
+*/

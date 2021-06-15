@@ -36,7 +36,6 @@ class DomRechercheSecondaire {
             
             // Si je click sur un element LI (ingredient, ustensiles ou materiels)
             if (element.classList.contains('research__liste__item')) {
-
                 const elementValue = element.textContent;
 
                 // Si le tag est déja sélectionné
@@ -46,23 +45,19 @@ class DomRechercheSecondaire {
                 }
                 // Si le tag n'est pas sélectionné
                 else {
+                    element.classList.add('tagSelected');
+                    
                     if (element.parentNode.classList.contains('research__liste--ingredients')){
-                        element.classList.add('tagSelected');
-
                     document.getElementById('tagsSelected').insertAdjacentHTML('beforeend',
-                        `<div class="tagsSelectedItem tagsSelectedItem--ingrediends" data-tag-selected="${elementValue}">${elementValue}<i class="far fa-times-circle closeTag"></i></div>`
+                        `<div class="tagsSelectedItem tagsSelectedItem--ingrediends ${elementValue}" data-tag-selected="${elementValue}">${elementValue}<i class="far fa-times-circle closeTag"></i></div>`
                         );
                     }
                     else if (element.parentNode.classList.contains('research__liste--appareils')){
-                        element.classList.add('tagSelected');
-
                     document.getElementById('tagsSelected').insertAdjacentHTML('beforeend',
                         `<div class="tagsSelectedItem tagsSelectedItem--appareils" data-tag-selected="${elementValue}">${elementValue}<i class="far fa-times-circle closeTag"></i></div>`
                         );
                     }
                     else if (element.parentNode.classList.contains('research__liste--ustensiles')){
-                        element.classList.add('tagSelected');
-
                     document.getElementById('tagsSelected').insertAdjacentHTML('beforeend',
                         `<div class="tagsSelectedItem tagsSelectedItem--ustensiles" data-tag-selected="${elementValue}">${elementValue}<i class="far fa-times-circle closeTag"></i></div>`
                         );
@@ -75,13 +70,17 @@ class DomRechercheSecondaire {
     closeTagByX() {
         document.getElementById('tagsSelected').addEventListener('click', function (event) {
             const element = event.target;
+            const elementValueX = element.parentNode.textContent;
             if (element.classList.contains('closeTag')) {
                 element.parentNode.remove();
+                console.log(elementValueX);
+                if (element.parentNode.classList.contains(elementValueX)) {
+                console.log("hey");
+                document.querySelector(elementValueX).classList.remove('tagSelected');
+                }
             }
         });  
     }
-
-    
 }
 
 export default DomRechercheSecondaire;

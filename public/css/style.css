@@ -121,12 +121,20 @@ main {
   font-size: 1.5rem;
 }
 
-.research__tagSelected {
+#tagsSelected {
   margin-bottom: 1.5rem;
   display: flex;
 }
-.research__tagSelected__tag {
-  background: #68D9A4;
+
+.research__liste .tagSelected {
+  color: #797979;
+}
+
+.research__liste .tagNotSelected {
+  color: white;
+}
+
+.tagsSelectedItem {
   width: 107px;
   height: 37px;
   border-radius: 5px;
@@ -140,13 +148,25 @@ main {
   margin-right: 1rem;
 }
 
+.tagsSelectedItem--ingrediends {
+  background: #3282F7;
+}
+
+.tagsSelectedItem--appareils {
+  background: #68D9A4;
+}
+
+.tagsSelectedItem--ustensiles {
+  background: #ED6454;
+}
+
 @media (min-width: 767px) {
-  .researchTag {
+  #researchTag {
     display: flex;
   }
 }
 
-.researchTag div {
+#researchTag div {
   margin-bottom: 0.5rem;
 }
 
@@ -195,7 +215,7 @@ main {
   display: inline-flex;
 }
 
-.research li {
+.research__liste__item {
   color: white;
   font-size: 18px;
 }
@@ -235,14 +255,15 @@ main {
   color: #797979;
 }
 
-.menus {
+#menus {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-top: 2rem;
+  align-content: flex-start;
 }
 @media (min-width: 767px) {
-  .menus {
+  #menus {
     flex-direction: row;
     flex-wrap: wrap;
   }
