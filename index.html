@@ -24,7 +24,7 @@
     </header>
     <!-- Main page -->
     <main>
-    <!-- Research -->
+        <!-- Research -->
         <section class="research">
             <div id="research__principal">
                 <input type="text" name="research__principal__text-area" id="research__principal__text-area"
@@ -39,45 +39,36 @@
 
             <div id="researchTag">
                 <div>
-                    <button class="research__tag research__tag--ingredients">
-                        <p class="research__tag__name">Ingrédiends</p>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <ul class="research__liste research__liste--ingredients">
-
-                    </ul>
-                </div>
-                <div>
-                    <button class="research__tag research__tag--appareils">
-                        <p class="research__tag__name">Appareils</p>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <ul class="research__liste research__liste--appareils">
-
+                    <div data-type='ingredients' class="research__tag research__tag--ingredients">
+                        <input class="research__tag__name" placeholder="ingredients">
+                        <button class="research__tag__button"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <ul id='ingredients' class="research__liste research__liste--ingredients">
                     </ul>
                 </div>
 
                 <div>
-                    <button class="research__tag research__tag--ustensiles">
-                        <p class="research__tag__name">Ustensiles</p>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <ul class="research__liste research__liste--ustensiles">
+                    <div data-type='appareils' class="research__tag research__tag--appareils">
+                        <input class="research__tag__name" placeholder="appareils">
+                        <button class="research__tag__button"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <ul id='appareils' class="research__liste research__liste--appareils">
+                    </ul>
+                </div>
 
+                <div>
+                    <div data-type='ustensiles' class="research__tag research__tag--ustensiles">
+                        <input class="research__tag__name" placeholder="ustensiles">
+                        <button class="research__tag__button"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <ul id='ustensiles' class="research__liste research__liste--ustensiles">
                     </ul>
                 </div>
             </div>
         </section>
 
-    <!-- Menu -->
+        <!-- Menu -->
         <section id="menus">
-           <article class="menu">
-                <a href="">
-                    <img src="public/img/imgMenu1.jpg" alt="photo menu 1" class="menu__img">
-                    <div class="menu__container">
-                    </div>
-                </a>
-            </article>
 
         </section>
     </main>

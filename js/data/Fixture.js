@@ -34,6 +34,43 @@ const resultatRechercheMock = {
             "ustensils": ["cuillère à Soupe", "verres", "presse citron"]
         },
         {
+            "id": 2,
+            "name" : "Poisson Cru à la tahitienne",
+            "servings": 2,
+            "ingredients": [
+                {
+                    "ingredient" : "Thon Rouge (ou blanc)",
+                    "quantity" : 200,
+                    "unit" : "grammes"
+                },
+                {
+                    "ingredient" : "Concombre",
+                    "quantity" : 1
+                },
+                {
+                    "ingredient" : "Tomate",
+                    "quantity" : 2
+                },
+                {
+                    "ingredient" : "Carotte",
+                    "quantite" : 1
+                },
+                {
+                    "ingredient" : "Citron Vert",
+                    "quantity" : 5
+                },
+                {
+                    "ingredient" : "Lait de Coco",
+                    "quantity" : 100,
+                    "unit" : "ml"
+                }
+            ],
+            "time": 60,
+            "description": "Découper le thon en dés, mettre dans un plat et recouvrir de jus de citron vert (mieux vaut prendre un plat large et peu profond). Laisser reposer au réfrigérateur au moins 2 heures. (Si possible faites-le le soir pour le lendemain. Après avoir laissé mariner le poisson, coupez le concombre en fines rondelles sans la peau et les tomates en prenant soin de retirer les pépins. Rayer la carotte. Ajouter les légumes au poissons avec le citron cette fois ci dans un Saladier. Ajouter le lait de coco. Pour ajouter un peu plus de saveur vous pouver ajouter 1 à 2 cuillères à soupe de Crème de coco",
+            "appliance": "Saladier",
+            "ustensils": ["presse citron"]
+        },
+        {
             "id": 50,
             "name": "Frangipane",
             "servings": 2,
