@@ -10,15 +10,13 @@ class DomRechercheSecondaire {
 
     creerUneSelectTags(listeSelectId, tagsValue) {
         let html = '';
-
         tagsValue.forEach(function (value, index) {
-            html += `<li class="research__liste__item" href="#">${value}</li>`;
+            html += `<li  data-tag-type="${listeSelectId}" data-tag-value="${value}" class="research__liste__item" href="#">${value}</li>`;
         });
 
         let listSelect = document.querySelector('.research__liste--' + listeSelectId);
         listSelect.insertAdjacentHTML('beforeend', html);
     }
-
 
 
     //////////// affiche ou masque le contenu des tags
@@ -33,35 +31,23 @@ class DomRechercheSecondaire {
         document.getElementById('researchTag').addEventListener('click', function (event) {
             const element = event.target;
             //console.dir(element);
-            
+
             // Si je click sur un element LI (ingredient, ustensiles ou materiels)
             if (element.classList.contains('research__liste__item')) {
                 const elementValue = element.textContent;
-
+                const elementType = element.dataset.tagType;
                 // Si le tag est déja sélectionné
                 if (element.classList.contains('tagSelected')) {
-                    element.classList.remove('tagSelected');
-                    document.querySelector('[data-tag-selected="' + elementValue + '"]').remove();
+                    element.classList.remove('tagSelected'); 
+                    document.querySelector('[data-tag-selected="' + elementValue + '"]').closest('div').remove();
                 }
                 // Si le tag n'est pas sélectionné
                 else {
                     element.classList.add('tagSelected');
-                    
-                    if (element.parentNode.classList.contains('research__liste--ingredients')){
                     document.getElementById('tagsSelected').insertAdjacentHTML('beforeend',
-                        `<div class="tagsSelectedItem tagsSelectedItem--ingrediends ${elementValue}" data-tag-selected="${elementValue}">${elementValue}<i class="far fa-times-circle closeTag"></i></div>`
-                        );
-                    }
-                    else if (element.parentNode.classList.contains('research__liste--appareils')){
-                    document.getElementById('tagsSelected').insertAdjacentHTML('beforeend',
-                        `<div class="tagsSelectedItem tagsSelectedItem--appareils" data-tag-selected="${elementValue}">${elementValue}<i class="far fa-times-circle closeTag"></i></div>`
-                        );
-                    }
-                    else if (element.parentNode.classList.contains('research__liste--ustensiles')){
-                    document.getElementById('tagsSelected').insertAdjacentHTML('beforeend',
-                        `<div class="tagsSelectedItem tagsSelectedItem--ustensiles" data-tag-selected="${elementValue}">${elementValue}<i class="far fa-times-circle closeTag"></i></div>`
-                        );
-                    }
+                        `<div class="tagsSelectedItem tagsSelectedItem--${elementType}">${elementValue}
+                        <i class="far fa-times-circle closeTag" data-tag-selected="${elementValue}"></i>
+                        </div>`);
                 }
             };
         });
@@ -70,14 +56,11 @@ class DomRechercheSecondaire {
     closeTagByX() {
         document.getElementById('tagsSelected').addEventListener('click', function (event) {
             const element = event.target;
-            const elementValueX = element.parentNode.textContent;
+           
             if (element.classList.contains('closeTag')) {
-                element.parentNode.remove();
-                console.log(elementValueX);
-                if (element.parentNode.classList.contains(elementValueX)) {
-                console.log("hey");
-                document.querySelector(elementValueX).classList.remove('tagSelected');
-                }
+                element.closest('div').remove();
+                const tagValue = element.dataset.tagSelected;
+                document.querySelector('[data-tag-value="'+ tagValue + '"]').classList.remove('tagSelected');
             }
         });  
     }
