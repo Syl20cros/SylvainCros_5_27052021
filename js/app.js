@@ -11,6 +11,10 @@ import selectDomBuilder from './dom/Select.js';
 import recipieDomBuilder from './dom/Recipe.js';
 
 
+import eventKeyupMainSearch from './listener/eventKeyupMainSearch.js';
+import SearchServices from './search/SearchServices.js';
+
+
 /**************** Affichage des panneaux des tags ***************************/
 displayModal.openCloseTagList();
 
@@ -33,3 +37,8 @@ const domRecipieBuilder = new recipieDomBuilder();
 
 domRecipieBuilder.afficherRecettes(resultatRechercheMock.recipies);
 
+/********************* recherche principale *********************************/
+eventKeyupMainSearch();
+
+export const searchServices = new SearchServices
+searchServices.launchSearch();
