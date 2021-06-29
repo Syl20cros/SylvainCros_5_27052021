@@ -1,9 +1,9 @@
 class Recipe {
     
     ///////////// Afficher les recettes /////////////
-    afficherRecettes(recipes) {
+    static afficherRecettes(result) {
         let html = '';
-        recipes.forEach(recipe => {
+        result.forEach(recipe => {
             
             // Construction des LI d'une recette
             let htmlIngredient = '';
@@ -21,7 +21,7 @@ class Recipe {
                 htmlIngredient += `<li data-quantity="${ingredient.quantity}" data-unit="${ingredient.unit}"><strong>${ingredient.ingredient}</strong> ${quantity} ${unit}</li>`;
             });
             //definition du html d'une recettes
-            html +=  `<article class="menu" id=${recipes.id}>
+            html +=  `<article class="menu" id=${result.id}>
             <a href="">
                 <img src="public/img/imgMenu1.jpg" alt="photo menu ${recipe.name}" class="menu__img">
                 <div class="menu__container">

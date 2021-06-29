@@ -148,15 +148,15 @@ main {
   margin-right: 1rem;
 }
 
-.tagsSelectedItem--ingredients {
+.tagsSelectedItem--ingredient {
   background: #3282F7;
 }
 
-.tagsSelectedItem--appareils {
+.tagsSelectedItem--appareil {
   background: #68D9A4;
 }
 
-.tagsSelectedItem--ustensiles {
+.tagsSelectedItem--ustensile {
   background: #ED6454;
 }
 

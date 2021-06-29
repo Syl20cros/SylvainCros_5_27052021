@@ -1,6 +1,3 @@
-// Import du menu liste deroulante tag
-import displayModal from './tag/tag-display.js';
-
 // Import du fake resultat de recherche
 import resultatRechercheMock from './data/Fixture.js';
 
@@ -10,35 +7,33 @@ import selectDomBuilder from './dom/Select.js';
 // Import de la classe qui construit la liste des recettes
 import recipieDomBuilder from './dom/Recipe.js';
 
-
-import eventKeyupMainSearch from './listener/eventKeyupMainSearch.js';
-import SearchServices from './search/SearchServices.js';
+// Import des evenements qui vont lancer la recherche
+import SearchEvent from './search/SearchEvent.js';
 
 
 /**************** Affichage des panneaux des tags ***************************/
-displayModal.openCloseTagList();
+selectDomBuilder.openCloseTagList();
 
 
 /********************** liste deroulante ************************************/
 const domSelectBuilder = new selectDomBuilder();
 
-// au click d'un tag sa l'ajoute a la liste des tags selectionnés ou le retire
+// au click d'un tag ca l'ajoute a la liste des tags selectionnés ou le retire
 domSelectBuilder.dispatchEvent();
 
 // affiche les trois listes deroulantes
-domSelectBuilder.creerLesTroisListesSelect(resultatRechercheMock);
+//domSelectBuilder.creerLesTroisListesSelect(resultatRechercheMock);
 
-// Ferme un tag au clicsur X
+// Ferme un tag au clic sur X
 domSelectBuilder.closeTagByX();
 
 
-/********************** Affichage recette ***********************************/
-const domRecipieBuilder = new recipieDomBuilder();
+/********************** Affichage des recette *********************************/
+//const domRecipieBuilder = new recipieDomBuilder();
 
-domRecipieBuilder.afficherRecettes(resultatRechercheMock.recipies);
+//domRecipieBuilder.afficherRecettes(resultatRechercheMock.recipies);
+
 
 /********************* recherche principale *********************************/
-eventKeyupMainSearch();
-
-export const searchServices = new SearchServices
-searchServices.launchSearch();
+const searchEvent = new SearchEvent();
+searchEvent.listen();
