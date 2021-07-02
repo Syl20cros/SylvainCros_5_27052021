@@ -1,4 +1,4 @@
-export default class SearchResult {
+ class SearchResult {
     constructor() {
         this.recipes = [];
         this.ingredients = new Set();
@@ -6,5 +6,31 @@ export default class SearchResult {
         this.ustensiles = new Set();
         this.allFilter = new Set();
     }
+
+
+    //construction du resultat de la recherche
+  buildSearchResult(resultRecipes) {
+    this.recipes = resultRecipes;
+    this.ingredients.clear();
+    this.appareils.clear();
+    this.ustensiles.clear();
+    this.recipes.forEach((recipe) => {
+      recipe.ingredients.forEach((element) => {
+        this.ingredients.add(element.ingredient);
+      });
+      this.appareils.add(recipe.appliance);
+      recipe.ustensils.forEach((element) => {
+        this.ustensiles.add(element);
+      });
+    });
+    this.allFilter = [
+      ...this.ingredients,
+      ...this.appareils,
+      ...this.ustensiles,
+    ];
+    //console.log(this.searchResult);
+  }
+  
 }
 
+export default SearchResult;
