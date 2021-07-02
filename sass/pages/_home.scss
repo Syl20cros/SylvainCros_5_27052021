@@ -74,6 +74,9 @@ main {
   flex-wrap: wrap;
   margin-right: 1rem;
 }
+.research__liste {
+ position: absolute;
+}
 
 .tagsSelectedItem--ingredient {
   background: $colour-ingredients;
@@ -197,6 +200,23 @@ main {
 
 .research__liste .itemSelected {
   color: #797979;
+}
+
+.fa-chevron-down{
+  animation-name: btnFiltres;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes btnFiltres {
+  0% {
+    transform: rotate(0deg);
+    transition: 0.5s;
+  }
+  100% {
+    transform: rotate(180deg);
+    transition: 1s;
+  }
 }
 
 ////// MENUS //////

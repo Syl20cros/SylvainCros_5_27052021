@@ -2,24 +2,21 @@
 
 class SearchParam {
   constructor() {
-    this.mainInput = document.getElementById(
-      "research__principal__text-area"
-    ).value;
+    this.mainInput = document.getElementById("research__principal__text-area").value;
     this.ingredients = this.getIngredients();
     this.appareils = this.getAppareils();
     this.ustensiles = this.getUstensiles();
-    this.allTags = new Set([
-      ...this.getIngredients(),
-      ...this.getAppareils(),
-      ...this.getUstensiles(),
-    ]);
     this.codeStatus = this.status();
-    console.log(this.allTags);
   }
 
+/*
+  // Recherche principale ok ou pas
+    isPrimarySearch () {
+     return this.mainInput !== ""  && this.mainInput > 2;
+    }
+    */
 
-  // Les différents status de recherche
-  // exemples: recerche principale seulement, tous les champs
+  
   status() {
     //////// cas vide
     if (
@@ -60,7 +57,6 @@ class SearchParam {
     else {
         this.codeStatus = "other";
       }
-    //console.dir(this.codeStatus);
     return this.codeStatus;
   }
 
@@ -75,7 +71,7 @@ class SearchParam {
     const ingredients = new Set();
     const ingredientsDom = Array.from(
       document.querySelectorAll("#ingredients .tagSelected")
-    );
+      );
     ingredientsDom.forEach((element) => {
       ingredients.add(element.innerHTML);
       //console.dir(ingredientsDom);

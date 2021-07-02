@@ -17,6 +17,7 @@ class SearchEvent {
       .getElementById("research__principal__text-area")
       .addEventListener("keyup", () => {
         this.searchService.launchSearch();
+        this.searchService.test();
       });
   }
 
@@ -35,6 +36,7 @@ class SearchEvent {
   onLoadMain() {
     document.addEventListener("DOMContentLoaded", () => {
       this.searchService.launchSearch();
+      this.searchService.test();
     });
   }
 }

@@ -54,29 +54,6 @@ li {
   color: #000;
 }
 
-/* FOOTER */
-.footer {
-  background: #E7E7E7;
-  padding-left: 1.8rem;
-  padding-right: 1.8rem;
-  padding-top: 1.5rem;
-  color: white;
-}
-.footer__header {
-  font-size: 1.6rem;
-}
-.footer__nav {
-  padding-left: 0rem;
-  padding-bottom: 1.2rem;
-  color: white;
-  margin-top: 1rem;
-}
-.footer__nav__link {
-  margin-bottom: 0.8rem;
-}
-.footer__nav i {
-  width: 1.8rem;
-}
 .header {
   display: flex;
   flex-direction: column;
@@ -146,6 +123,10 @@ main {
   justify-content: space-around;
   flex-wrap: wrap;
   margin-right: 1rem;
+}
+
+.research__liste {
+  position: absolute;
 }
 
 .tagsSelectedItem--ingredient {
@@ -274,6 +255,22 @@ main {
   color: #797979;
 }
 
+.fa-chevron-down {
+  animation-name: btnFiltres;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes btnFiltres {
+  0% {
+    transform: rotate(0deg);
+    transition: 0.5s;
+  }
+  100% {
+    transform: rotate(180deg);
+    transition: 1s;
+  }
+}
 #menus {
   display: flex;
   flex-direction: column;

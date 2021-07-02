@@ -1,25 +1,5 @@
 class DomRechercheSecondaire {
 
-    //////////// creer Les Trois Listes Select
-    /*
-    creerLesTroisListesSelect(resultDeLaRecherche) {
-        this.creerUneSelectTags('ingredients', resultDeLaRecherche.ingredients);
-        this.creerUneSelectTags('appareils', resultDeLaRecherche.appareils);
-        this.creerUneSelectTags('ustensiles', resultDeLaRecherche.ustensils);
-    }
-
-
-    creerUneSelectTags(listeSelectId, tagsValue) {
-        let html = '';
-        tagsValue.forEach(function (value, index) {
-            html += `<li  data-tag-type="${listeSelectId}" data-tag-value="${value}" class="research__liste__item" href="#">${value}</li>`;
-        });
-
-        let listSelect = document.querySelector('.research__liste--' + listeSelectId);
-        listSelect.insertAdjacentHTML('beforeend', html);
-    }
-    */
-
    //rempli la liste complète des ingredients à partir des recettes du résultat de recherche
    static buildFilter(searchParams, searchResult, parentList, category) {
 
@@ -53,14 +33,25 @@ class DomRechercheSecondaire {
                     document.getElementById(elementToTogle).classList.remove('modalTag-show');
                     btn.classList.remove('research__tag--bigger');
                 } else {
-                    document.getElementById(elementToTogle).classList.add('modalTag-show')
+                    //masque toutes les listes
+                    let allList = document.querySelectorAll('.research__liste');
+                    for (var eachList of allList){
+                        eachList.classList.remove('modalTag-show');
+                    }
+                    //reduction taille de toutes les tag box
+                    let allTagBox = document.querySelectorAll('.research__tag');
+                    for (var eachTagBox of allTagBox){
+                        eachTagBox.classList.remove('research__tag--bigger');
+                    }
+                    //Affiche la liste selectionnée
+                    document.getElementById(elementToTogle).classList.add('modalTag-show');
                     btn.classList.add('research__tag--bigger');
                 }
             });
         }
     }
 
-
+querySelector
     //////////// creation des tagsbox au clic dans la liste des tags
     dispatchEvent() {
         document.getElementById('researchTag').addEventListener('click', function (event) {

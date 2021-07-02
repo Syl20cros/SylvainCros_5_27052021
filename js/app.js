@@ -21,17 +21,9 @@ const domSelectBuilder = new selectDomBuilder();
 // au click d'un tag ca l'ajoute a la liste des tags selectionnés ou le retire
 domSelectBuilder.dispatchEvent();
 
-// affiche les trois listes deroulantes
-//domSelectBuilder.creerLesTroisListesSelect(resultatRechercheMock);
 
 // Ferme un tag au clic sur X
 domSelectBuilder.closeTagByX();
-
-
-/********************** Affichage des recette *********************************/
-//const domRecipieBuilder = new recipieDomBuilder();
-
-//domRecipieBuilder.afficherRecettes(resultatRechercheMock.recipies);
 
 
 /********************* recherche principale *********************************/

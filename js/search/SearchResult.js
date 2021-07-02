@@ -7,3 +7,4 @@ export default class SearchResult {
         this.allFilter = new Set();
     }
 }
+
