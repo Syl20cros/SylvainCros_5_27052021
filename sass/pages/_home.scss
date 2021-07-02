@@ -202,13 +202,14 @@ main {
   color: #797979;
 }
 
-.fa-chevron-down{
-  animation-name: btnFiltres;
+.icoReturnAnim{
+  animation-name: icoReturn;
   animation-duration: 1s;
   animation-fill-mode: both;
 }
 
-@keyframes btnFiltres {
+
+@keyframes icoReturn {
   0% {
     transform: rotate(0deg);
     transition: 0.5s;

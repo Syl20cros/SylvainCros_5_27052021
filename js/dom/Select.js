@@ -29,9 +29,11 @@ class DomRechercheSecondaire {
         for (let btn of btns) {
             btn.addEventListener('click',function() {
                 let elementToTogle = btn.dataset.type;
+                var ico = btn.querySelector('.fa-chevron-down');
                 if (document.getElementById(elementToTogle).classList.contains('modalTag-show')) {
                     document.getElementById(elementToTogle).classList.remove('modalTag-show');
                     btn.classList.remove('research__tag--bigger');
+                    ico.classList.remove('icoReturnAnim');//retour icones fleche en position initial
                 } else {
                     //masque toutes les listes
                     let allList = document.querySelectorAll('.research__liste');
@@ -43,9 +45,16 @@ class DomRechercheSecondaire {
                     for (var eachTagBox of allTagBox){
                         eachTagBox.classList.remove('research__tag--bigger');
                     }
+                    //retour de toutes les icones fleche en position initial
+                    let allIconsReturn = document.querySelectorAll('.icoReturnAnim');
+                    for (var eachIconsReturn of allIconsReturn){
+                        eachIconsReturn.classList.remove('icoReturnAnim');
+                    }
                     //Affiche la liste selectionnée
                     document.getElementById(elementToTogle).classList.add('modalTag-show');
                     btn.classList.add('research__tag--bigger');
+                    //retourne la fleche vers le haut
+                    ico.classList.add('icoReturnAnim');
                 }
             });
         }
