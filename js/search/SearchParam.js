@@ -6,65 +6,26 @@ class SearchParam {
     this.ingredients = this.getIngredients();
     this.appareils = this.getAppareils();
     this.ustensiles = this.getUstensiles();
-    this.codeStatus = this.status();
+    //this.codeStatus = this.status();
   }
 
-/*
-  // Recherche principale ok ou pas
-    isPrimarySearch () {
-     return this.mainInput !== ""  && this.mainInput > 2;
+
+    // Recherche principale vide ou pas
+    PrimarySearchInf3 () {
+        return this.mainInput.trim().length <= 2;
     }
-    */
+
+    // Recherche principale ok ou pas
+    isValidPrimarySearch () {
+        return this.mainInput.trim().length > 2;
+    }
+
+    // Recherche secondaire ok ou pas
+    isValidSecondarySearch() {
+       return this.ingredients.size !== 0 || this.appareils.size !== 0 || this.ustensiles.size !== 0;
+    }
 
   
-  status() {
-    //////// cas vide
-    if (
-      this.mainInput === ""  &&
-      this.ingredients.size == 0 &&
-      this.appareils.size == 0 &&
-      this.ustensiles.size == 0
-    ) {
-      this.codeStatus = "empty";
-    }
-    //////// cas recherche principale uniquement
-    else if (
-      this.mainInput.length > 2 &&
-      this.ingredients.size == 0 &&
-      this.appareils.size == 0 &&
-      this.ustensiles.size == 0
-    ) {
-      this.codeStatus = "primarySearchOnly";
-    }
-    //////// cas tag uniquement
-    else if (
-      (this.mainInput === "" && this.ingredients.size !== 0) ||
-      this.appareils.size !== 0 ||
-      this.ustensiles.size !== 0
-    ) {
-      this.codeStatus = "tagSearchOnly";
-    }
-    //////// cas combinés
-    else if (
-      this.mainInput.length > 2 &&
-      this.ingredients.size !== 0 ||
-      this.appareils.size !== 0 ||
-      this.ustensiles.size !== 0
-    ) {
-      this.codeStatus = "mixedSearch";
-    }
-    //////// cas combinés
-    else {
-        this.codeStatus = "other";
-      }
-    return this.codeStatus;
-  }
-
-
-  getMainInput() {
-    return this.mainInput;
-  }
-
 
   //retourne un tableau des éléments selectionnés pour chaque catégorie
   getIngredients() {

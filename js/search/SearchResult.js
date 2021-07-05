@@ -28,7 +28,6 @@
       ...this.appareils,
       ...this.ustensiles,
     ];
-    //console.log(this.searchResult);
   }
   
 }

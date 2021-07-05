@@ -2,6 +2,7 @@ class Recipe {
     
     ///////////// Afficher les recettes /////////////
     static afficherRecettes(result) {
+        document.getElementById('menus').textContent = ''; //vide la liste de recette
         let html = '';
         result.forEach(recipe => {
             

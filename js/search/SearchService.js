@@ -3,6 +3,7 @@ import SearchParam from "./SearchParam.js";
 import SearchResult from "./SearchResult.js";
 import Recipe from "../dom/Recipe.js";
 import DomRechercheSecondaire from "../dom/Select.js";
+import SearchMain from "./SearchMain.js";
 //import DomFilters from "../../dom/selectTags/DomFilters.js";
 
 class SearchService {
@@ -15,6 +16,26 @@ class SearchService {
     this.searchParam = new SearchParam();
     this.searchResult = new SearchResult();
 
+    if (this.searchParam.PrimarySearchInf3()){
+      this.searchResult.buildSearchResult(recipesAll);
+      this.buildDom(this.searchResult);
+      console.log('show all');
+    }
+
+    if (this.searchParam.isValidPrimarySearch()){
+      this.searchResultFinal = SearchMain.research(this.searchParam);
+      this.searchResult.buildSearchResult(this.searchResultFinal);
+      this.buildDom(this.searchResult);
+      console.log('primary shearch');
+      if (this.searchParam.isValidSecondarySearch()){
+
+        console.log('secondary shearch');
+      }
+    }
+    
+
+    
+/*
     switch (this.searchParam.codeStatus) {
       case "empty": // si aucun param, affiche toutes les recettes
         //console.log("empty2");
@@ -42,12 +63,9 @@ class SearchService {
     }
     //console.log(this.searchResultFinal);
     return this.searchResultFinal;
+    */
   }
-
- test (){
-    this.searchResult.buildSearchResult(this.searchResultFinal);
-    this.buildDom(this.searchResult);
-}
+  
 
   //Construction du DOM avec resultat de la recherche
   buildDom(result) {
