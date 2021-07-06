@@ -1,8 +1,5 @@
-import recipes from "../data/recipes.js";
-import SearchMain from "./SearchMain.js";
-
 class SearchTag {
-    static research() {
+    static research(searchParam) {
         this.searchTagFiltered = new Set();
         
 

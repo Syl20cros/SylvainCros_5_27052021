@@ -2,25 +2,18 @@ class DomRechercheSecondaire {
 
    //rempli la liste complète des ingredients à partir des recettes du résultat de recherche
    static buildFilter(searchParams, searchResult, parentList, category) {
-
-    const filterList = [...document.getElementById(parentList).children]
-    filterList.forEach(element => {
-        if (element.classList.contains('tagSelected') !== true) {
-            element.remove()
-        }    
-    });
-
     let html = '';
     searchResult.forEach(elmt => {
         if (searchParams.has(elmt) == false) {
             html += `<li  data-tag-type="${category}" data-tag-value="${elmt}" class="research__liste__item" href="#">${elmt}</li>`;
+        } else{
+            html += `<li  data-tag-type="${category}" data-tag-value="${elmt}" class="research__liste__item tagSelected" href="#">${elmt}</li>`;
         }
     });
 
     let listSelect = document.getElementById(parentList);
-    listSelect.insertAdjacentHTML('beforeend',html);
+    listSelect.innerHTML = html;
 }
-
 
 
     //////////// affiche ou masque le contenu des tags
@@ -78,7 +71,7 @@ querySelector
                 }
                 // Si le tag n'est pas sélectionné
                 else {
-                    element.classList.add('tagSelected');
+                   element.classList.add('tagSelected');
                     document.getElementById('tagsSelected').insertAdjacentHTML('beforeend',
                         `<div class="tagsSelectedItem tagsSelectedItem--${elementType}">${elementValue}
                         <i class="far fa-times-circle closeTag" data-tag-selected="${elementValue}"></i>

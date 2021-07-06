@@ -1,7 +1,7 @@
-import recipes from "../data/recipes.js";
+
 
 class SearchMain {
-    static research(searchParam) {
+    static research(searchParam, recipes) {
         this.filteredRecipes = new Set();
         this.recipes = recipes;
 

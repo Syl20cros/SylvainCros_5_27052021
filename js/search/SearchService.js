@@ -4,36 +4,38 @@ import SearchResult from "./SearchResult.js";
 import Recipe from "../dom/Recipe.js";
 import DomRechercheSecondaire from "../dom/Select.js";
 import SearchMain from "./SearchMain.js";
+import SearchTag from "./SearchTag.js";
+import recipes from "../data/recipes.js";
 //import DomFilters from "../../dom/selectTags/DomFilters.js";
 
 class SearchService {
   constructor() {
     this.recipes = recipesAll;
-    this.searchResultFinal = this.recipes;
   }
 
   launchSearch() {
     this.searchParam = new SearchParam();
     this.searchResult = new SearchResult();
-
-    if (this.searchParam.PrimarySearchInf3()){
-      this.searchResult.buildSearchResult(recipesAll);
-      this.buildDom(this.searchResult);
-      console.log('show all');
-      if (this.searchParam.isValidSecondarySearch()){
-        //code lancer recherche secondaire
-        console.log('secondary shearch');
-      }
-    } else {
-      this.searchResultFinal = SearchMain.research(this.searchParam);
-      this.searchResult.buildSearchResult(this.searchResultFinal);
-      this.buildDom(this.searchResult);
-      console.log('primary shearch');
-      if (this.searchParam.isValidSecondarySearch()){
-        //code lancer recherche secondaire en fonction recherche principale
-        console.log('secondary shearch');
-      }
+    this.searchResultFinal = this.recipes;
+    
+    if (this.searchParam.primarySearchValid()){
+      this.searchResultFinal = SearchMain.research(
+        this.searchParam,
+        this.searchResultFinal
+      );
+      console.log('primary');
     }
+    if (this.searchParam.isValidSecondarySearch()){
+      //code lancer recherche secondaire en fonction recherche principale
+      this.searchResultFinal = SearchMain.research(   // SearchMain a remplacer par : SearchTag
+        this.searchParam,
+        this.searchResultFinal
+      );
+      console.log('tag search');
+    }
+    this.searchResult.buildSearchResult(this.searchResultFinal);
+    this.buildDom(this.searchResult);
+    //console.dir(this);
   }
   
 

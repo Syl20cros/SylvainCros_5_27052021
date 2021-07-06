@@ -51,10 +51,13 @@ main {
 #tagsSelected {
   margin-bottom: 1.5rem;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .research__liste .tagSelected {
-  color: #797979;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
 }
 
 .research__liste .tagNotSelected {
@@ -62,8 +65,9 @@ main {
 }
 
 .tagsSelectedItem {
-  width: 107px;
-  height: 37px;
+  min-width: 107px;
+  //height: 37px;
+  min-height: 37px;
   border-radius: 5px;
   font-size: 14px;
   color: white;
@@ -73,6 +77,8 @@ main {
   justify-content: space-around;
   flex-wrap: wrap;
   margin-right: 1rem;
+  margin-bottom: 0.5rem;
+  padding-left: 5px;
 }
 .research__liste {
  position: absolute;
@@ -159,6 +165,8 @@ main {
 .research__liste__item {
   width: 10rem;
   display: inline-flex;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .research__liste__item {
@@ -198,8 +206,8 @@ main {
   transition: 1s;
 }
 
-.research__liste .itemSelected {
-  color: #797979;
+.fa-times-circle {
+  margin: 5px;
 }
 
 .icoReturnAnim{

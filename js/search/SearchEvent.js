@@ -15,7 +15,6 @@ class SearchEvent {
   onKeyUp() {
     document.getElementById("research__principal__text-area").addEventListener("keyup", () => {
         this.searchService.launchSearch();
-        //this.searchService.test();
       });
   }
 

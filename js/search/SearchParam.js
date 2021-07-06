@@ -11,8 +11,8 @@ class SearchParam {
 
 
     // Recherche principale inf a 3 ou pas
-    PrimarySearchInf3 () {
-        return this.mainInput.trim().length <= 2;
+    primarySearchValid() {
+        return this.mainInput.trim().length > 2;
     }
 
     // Recherche secondaire ok ou pas
