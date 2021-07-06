@@ -10,14 +10,9 @@ class SearchParam {
   }
 
 
-    // Recherche principale vide ou pas
+    // Recherche principale inf a 3 ou pas
     PrimarySearchInf3 () {
         return this.mainInput.trim().length <= 2;
-    }
-
-    // Recherche principale ok ou pas
-    isValidPrimarySearch () {
-        return this.mainInput.trim().length > 2;
     }
 
     // Recherche secondaire ok ou pas
@@ -35,7 +30,6 @@ class SearchParam {
       );
     ingredientsDom.forEach((element) => {
       ingredients.add(element.innerHTML);
-      //console.dir(ingredientsDom);
     });
     return ingredients;
   }
@@ -47,7 +41,6 @@ class SearchParam {
     );
     appareilsDom.forEach((element) => {
       appareils.add(element.innerHTML);
-      //console.dir(appareilsDom);
     });
     return appareils;
   }
@@ -59,7 +52,6 @@ class SearchParam {
     );
     ustensilesDom.forEach((element) => {
       ustensiles.add(element.innerHTML);
-      //console.dir(ustensilesDom);
     });
     return ustensiles;
   }

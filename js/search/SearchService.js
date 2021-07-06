@@ -20,50 +20,20 @@ class SearchService {
       this.searchResult.buildSearchResult(recipesAll);
       this.buildDom(this.searchResult);
       console.log('show all');
-    }
-
-    if (this.searchParam.isValidPrimarySearch()){
+      if (this.searchParam.isValidSecondarySearch()){
+        //code lancer recherche secondaire
+        console.log('secondary shearch');
+      }
+    } else {
       this.searchResultFinal = SearchMain.research(this.searchParam);
       this.searchResult.buildSearchResult(this.searchResultFinal);
       this.buildDom(this.searchResult);
       console.log('primary shearch');
       if (this.searchParam.isValidSecondarySearch()){
-
+        //code lancer recherche secondaire en fonction recherche principale
         console.log('secondary shearch');
       }
     }
-    
-
-    
-/*
-    switch (this.searchParam.codeStatus) {
-      case "empty": // si aucun param, affiche toutes les recettes
-        //console.log("empty2");
-        this.searchResult.buildSearchResult(this.searchResultFinal);
-        this.buildDom(this.searchResult);
-        break;
-
-      case "primarySearchOnly": // si texte présent dans champ principal
-        //cherche les recettes suivant la recherche principale
-        //console.log("primarySearchOnly2");
-        break;
-
-      case "mixedSearch": // si recherche principale et tag present
-        //console.log("mixedSearch2");
-        break;
-
-      case "tagSearchOnly": // si uniquement tag selectionné
-        //console.log("tagSearchOnly2");
-        this.searchResult.buildSearchResult(this.searchResultFinal);
-        this.buildDom(this.searchResult);
-        break;
-
-      default:
-        break;
-    }
-    //console.log(this.searchResultFinal);
-    return this.searchResultFinal;
-    */
   }
   
 
