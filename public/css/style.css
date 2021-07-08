@@ -146,6 +146,10 @@ main {
   background: #ED6454;
 }
 
+#researchTag .hideToTagList {
+  display: none;
+}
+
 @media (min-width: 767px) {
   #researchTag {
     display: flex;

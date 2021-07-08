@@ -4,7 +4,7 @@ import SearchResult from "./SearchResult.js";
 import Recipe from "../dom/Recipe.js";
 import DomRechercheSecondaire from "../dom/Select.js";
 import SearchMain from "./SearchMain.js";
-import SearchTag from "./SearchTag.js";
+//import SearchTag from "./SearchTag.js";
 import recipes from "../data/recipes.js";
 //import DomFilters from "../../dom/selectTags/DomFilters.js";
 
@@ -31,13 +31,17 @@ class SearchService {
         this.searchParam,
         this.searchResultFinal
       );
-      console.log('tag search');
     }
     this.searchResult.buildSearchResult(this.searchResultFinal);
     this.buildDom(this.searchResult);
-    //console.dir(this);
   }
   
+  //Clear tag input
+  clearInputTag() {
+    document.getElementById('inputIngredients').value = "";
+    document.getElementById('inputAppareils').value = "";
+    document.getElementById('inputUstencils').value = "";
+  }
 
   //Construction du DOM avec resultat de la recherche
   buildDom(result) {

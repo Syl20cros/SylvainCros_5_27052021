@@ -96,6 +96,10 @@ main {
   background: $colour-ustensiles;
 }
 
+#researchTag .hideToTagList {
+  display: none;
+}
+
 ////// RESEARCH TAG //////
 #researchTag {
   @include desktop {

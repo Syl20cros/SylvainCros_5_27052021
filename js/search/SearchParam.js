@@ -20,8 +20,11 @@ class SearchParam {
        return this.ingredients.size !== 0 || this.appareils.size !== 0 || this.ustensiles.size !== 0;
     }
 
-  
+    primarySearchEmpty() {
+        return this.mainInput === "";
+    }
 
+  
   //retourne un tableau des éléments selectionnés pour chaque catégorie
   getIngredients() {
     const ingredients = new Set();
