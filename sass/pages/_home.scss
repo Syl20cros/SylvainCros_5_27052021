@@ -296,3 +296,16 @@ main {
     }
   }
 }
+
+.messageRecipeNotFound {
+  background-color: $colour-bg-secondary;
+  font-size: 18px;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  display: none;
+}
+
+.showMessageRecipeNotFound {
+  display: block;
+}

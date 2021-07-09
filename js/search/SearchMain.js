@@ -22,7 +22,16 @@ class SearchMain {
                 }); 
             }
         });
+
+        //Afficher message resultat vide
+        if (this.filteredRecipes.size == 0 ){
+            document.getElementById('messageRecipeNotFound').classList.add('showMessageRecipeNotFound');
+        } else {
+            document.getElementById('messageRecipeNotFound').classList.remove('showMessageRecipeNotFound');
+        }
+
         return this.filteredRecipes;
+        
     }
 }
 

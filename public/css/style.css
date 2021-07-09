@@ -350,4 +350,17 @@ main {
   overflow: hidden;
 }
 
+.messageRecipeNotFound {
+  background-color: #E7E7E7;
+  font-size: 18px;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  display: none;
+}
+
+.showMessageRecipeNotFound {
+  display: block;
+}
+
 /*# sourceMappingURL=style.css.map */

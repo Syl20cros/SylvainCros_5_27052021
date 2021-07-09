@@ -19,13 +19,14 @@ class SearchService {
     this.searchResultFinal = this.recipes;
     
     if (this.searchParam.primarySearchValid()){
+      //Lancement de la recherche principale
       this.searchResultFinal = SearchMain.searchPrimary(
         this.searchParam,
         this.searchResultFinal
       );
     }
     if (this.searchParam.isValidSecondarySearch()){
-      //code lancer recherche secondaire en fonction recherche principale
+      //Lancement de la recherche secondaire en fonction recherche principale
       this.searchResultFinal =  SearchTag.searchByTag(   
         this.searchParam,
         this.searchResultFinal
