@@ -4,7 +4,7 @@ import SearchResult from "./SearchResult.js";
 import Recipe from "../dom/Recipe.js";
 import DomRechercheSecondaire from "../dom/Select.js";
 import SearchMain from "./SearchMain.js";
-//import SearchTag from "./SearchTag.js";
+import SearchTag from "./SearchTag.js";
 import recipes from "../data/recipes.js";
 //import DomFilters from "../../dom/selectTags/DomFilters.js";
 
@@ -19,15 +19,14 @@ class SearchService {
     this.searchResultFinal = this.recipes;
     
     if (this.searchParam.primarySearchValid()){
-      this.searchResultFinal = SearchMain.research(
+      this.searchResultFinal = SearchMain.searchPrimary(
         this.searchParam,
         this.searchResultFinal
       );
-      console.log('primary');
     }
     if (this.searchParam.isValidSecondarySearch()){
       //code lancer recherche secondaire en fonction recherche principale
-      this.searchResultFinal = SearchMain.research(   // SearchMain a remplacer par : SearchTag
+      this.searchResultFinal =  SearchTag.searchByTag(   
         this.searchParam,
         this.searchResultFinal
       );

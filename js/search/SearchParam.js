@@ -6,7 +6,7 @@ class SearchParam {
     this.ingredients = this.getIngredients();
     this.appareils = this.getAppareils();
     this.ustensiles = this.getUstensiles();
-    //this.codeStatus = this.status();
+    this.allSelected = new Set([...this.getIngredients(),...this.getAppareils(),...this.getUstensiles()]);
   }
 
 

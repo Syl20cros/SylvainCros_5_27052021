@@ -1,7 +1,7 @@
 
 
 class SearchMain {
-    static research(searchParam, recipes) {
+    static searchPrimary(searchParam, recipes) {
         this.filteredRecipes = new Set();
         this.recipes = recipes;
 
