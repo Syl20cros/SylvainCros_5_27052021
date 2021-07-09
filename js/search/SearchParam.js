@@ -10,21 +10,21 @@ class SearchParam {
   }
 
 
-    // Recherche principale inf a 3 ou pas
-    primarySearchValid() {
-        return this.mainInput.trim().length > 2;
-    }
+  // Recherche principale inf a 3 ou pas
+  primarySearchValid() {
+      return this.mainInput.trim().length > 2;
+  }
 
-    // Recherche secondaire ok ou pas
-    isValidSecondarySearch() {
-       return this.ingredients.size !== 0 || this.appareils.size !== 0 || this.ustensiles.size !== 0;
-    }
+  // Recherche principale vide
+  primarySearchEmpty() {
+    return this.mainInput === "";
+  }
 
-    primarySearchEmpty() {
-        return this.mainInput === "";
-    }
+  // Recherche secondaire ok ou pas
+  isValidSecondarySearch() {
+      return this.ingredients.size !== 0 || this.appareils.size !== 0 || this.ustensiles.size !== 0;
+  }
 
-  
   //retourne un tableau des éléments selectionnés pour chaque catégorie
   getIngredients() {
     const ingredients = new Set();

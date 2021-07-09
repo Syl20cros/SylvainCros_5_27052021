@@ -10,7 +10,7 @@ class SearchMain {
             const inputValue = searchParam.mainInput.toLowerCase();
 
             if (recipeName.indexOf(inputValue) > -1) {
-                this.filteredRecipes.add(recipe)
+                this.filteredRecipes.add(recipe);
             } else if (recipe.description.toLowerCase().indexOf(inputValue) > -1) {
                 this.filteredRecipes.add(recipe)
             }
@@ -21,6 +21,7 @@ class SearchMain {
                     }
                 }); 
             }
+            console.log(recipe.ingredients);
         });
 
         //Afficher message resultat vide

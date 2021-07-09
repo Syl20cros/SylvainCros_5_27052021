@@ -6,7 +6,6 @@ import DomRechercheSecondaire from "../dom/Select.js";
 import SearchMain from "./SearchMain.js";
 import SearchTag from "./SearchTag.js";
 import recipes from "../data/recipes.js";
-//import DomFilters from "../../dom/selectTags/DomFilters.js";
 
 class SearchService {
   constructor() {

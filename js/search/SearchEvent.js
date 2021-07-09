@@ -32,7 +32,6 @@ class SearchEvent {
     this.table.forEach((element) => {
       element.addEventListener("keyup", DomRechercheSecondaire.tagInputFiter);
     });
-    
   }
 
   onTagClick() {
