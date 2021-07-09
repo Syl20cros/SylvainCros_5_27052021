@@ -31,7 +31,6 @@ class SearchMain {
         }
 
         return this.filteredRecipes;
-        
     }
 }
 

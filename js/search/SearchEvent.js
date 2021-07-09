@@ -21,10 +21,7 @@ class SearchEvent {
       .getElementById("research__principal__text-area")
       .addEventListener("keyup", () => {
         this.searchParam = new SearchParam();
-        if (this.searchParam.primarySearchValid()) {
-          this.searchService.launchSearch();
-        }
-        if (this.searchParam.primarySearchEmpty()) {
+        if (this.searchParam.primarySearchValid() || this.searchParam.primarySearchEmpty()) {
           this.searchService.launchSearch();
         }
       });
