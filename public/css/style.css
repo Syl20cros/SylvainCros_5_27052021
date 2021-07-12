@@ -224,6 +224,7 @@ main {
   display: inline-flex;
   margin-bottom: 0.5rem;
   margin-right: 0.5rem;
+  cursor: pointer;
 }
 
 .research__liste__item {
@@ -264,6 +265,7 @@ main {
 
 .fa-times-circle {
   margin: 5px;
+  cursor: pointer;
 }
 
 .icoReturnAnim {

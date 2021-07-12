@@ -21,13 +21,15 @@ class SearchMain {
                     }
                 }); 
             }
-            console.log(recipe.ingredients);
         });
 
         //Afficher message resultat vide
-        if (this.filteredRecipes.size == 0 ){
+        if (this.filteredRecipes.size == 0 ) {
             document.getElementById('messageRecipeNotFound').classList.add('showMessageRecipeNotFound');
         } else {
+            document.getElementById('messageRecipeNotFound').classList.remove('showMessageRecipeNotFound');
+        }
+        if (searchParam.mainInput.toLowerCase() == 0) { //Supprime message si champ de recherche vide
             document.getElementById('messageRecipeNotFound').classList.remove('showMessageRecipeNotFound');
         }
 

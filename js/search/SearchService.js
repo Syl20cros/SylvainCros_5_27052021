@@ -17,7 +17,7 @@ class SearchService {
     this.searchResult = new SearchResult();
     this.searchResultFinal = this.recipes;
     
-    if (this.searchParam.primarySearchValid()){
+    if (this.searchParam.primarySearchValid() || this.searchParam.primarySearchEmpty()) {
       //Lancement de la recherche principale
       this.searchResultFinal = SearchMain.searchPrimary(
         this.searchParam,
