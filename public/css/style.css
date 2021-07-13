@@ -230,6 +230,7 @@ main {
 .research__liste__item {
   color: white;
   font-size: 18px;
+  padding-left: 1rem;
 }
 
 .modalTag-show {

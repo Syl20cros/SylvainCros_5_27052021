@@ -11,12 +11,23 @@ class SearchService {
   constructor() {
     this.recipes = recipesAll;
     this.filtered = SearchMain;
+    this.mainInputOldValue = '';
+    this.tagInputOldValue = '';
+    this.searchResultFinal = this.recipes;
   }
 
   launchSearch() {
     this.searchParam = new SearchParam();
     this.searchResult = new SearchResult();
-    this.searchResultFinal = this.recipes;
+    this.mainInputNewValue = this.searchParam.mainInput;
+    this.tagInputNewValue = this.searchParam.allSelected;
+    
+
+    //Utilisation du resultat precedent ou pas pour les inputs
+    if ((this.mainInputNewValue.length < this.mainInputOldValue.length) // si nouvelle recherche contient moins de carractere que la precedente
+      || (this.tagInputNewValue.size < this.tagInputOldValue.size)){ // ou si il y a moins de tag a la nouvelle recherche
+      this.searchResultFinal = this.recipes; // searchResultFinal = toutes les recettes
+    }
     
     if (this.searchParam.primarySearchValid() || this.searchParam.primarySearchEmpty()) {
       //Lancement de la recherche principale
@@ -25,6 +36,7 @@ class SearchService {
         this.searchResultFinal
       );
     }
+
     if (this.searchParam.isValidSecondarySearch()){
       //Lancement de la recherche secondaire en fonction recherche principale
       this.searchResultFinal =  SearchTag.searchByTag(   
@@ -32,6 +44,9 @@ class SearchService {
         this.searchResultFinal
       );
     }
+
+    this.mainInputOldValue = this.searchParam.mainInput; //deffinition du mainInputOldValue avant la nouvelle recherche
+    this.tagInputOldValue = this.searchParam.allSelected; //deffinition du tagInputOldValue avant la nouvelle recherche
     this.searchResult.buildSearchResult(this.searchResultFinal);
     this.buildDom(this.searchResult);
   }

@@ -33,9 +33,7 @@ class SearchMain {
             document.getElementById('messageRecipeNotFound').classList.remove('showMessageRecipeNotFound');
         }
         
-        console.log(this.filteredRecipes);
         return this.filteredRecipes;
-        
     }
 }
 
