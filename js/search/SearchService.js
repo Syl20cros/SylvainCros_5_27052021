@@ -10,6 +10,7 @@ import recipes from "../data/recipes.js";
 class SearchService {
   constructor() {
     this.recipes = recipesAll;
+    this.filtered = SearchMain;
   }
 
   launchSearch() {

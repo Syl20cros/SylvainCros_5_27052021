@@ -266,6 +266,7 @@ main {
 .fa-times-circle {
   margin: 5px;
   cursor: pointer;
+  font-size: 1.1rem;
 }
 
 .icoReturnAnim {

@@ -18,11 +18,11 @@ class DomRechercheSecondaire {
 
 //////////// Filtrer la liste de tag en fonction du texte input
     static tagInputFiter(event) {
-        const textFilter = event.target.value.toLowerCase();
+        const textFilter = event.target.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
         const dropdown = event.target.parentElement.parentElement;
         [...dropdown.getElementsByTagName('li')].forEach((element) => {
             const textValue = element.textContent || element.innerText;
-            if (textValue.toLowerCase().indexOf(textFilter) > -1) {
+            if (textValue.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").indexOf(textFilter) > -1) {
                 element.classList.remove('hideToTagList');
             } else {
                 element.classList.add('hideToTagList');

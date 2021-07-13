@@ -12,7 +12,7 @@ class SearchMain {
             if (recipeName.indexOf(inputValue) > -1) {
                 this.filteredRecipes.add(recipe);
             } else if (recipe.description.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").indexOf(inputValue) > -1) {
-                this.filteredRecipes.add(recipe)
+                this.filteredRecipes.add(recipe);
             }
             else {
                 recipe.ingredients.forEach((element) => {
@@ -21,7 +21,6 @@ class SearchMain {
                     }
                 }); 
             }
-            //console.log(recipeName);
         });
 
         //Afficher message resultat vide
@@ -33,7 +32,7 @@ class SearchMain {
         if (searchParam.mainInput.toLowerCase() == 0) { //Supprime message si champ de recherche vide
             document.getElementById('messageRecipeNotFound').classList.remove('showMessageRecipeNotFound');
         }
-        console.log(this.recipes);
+        
         console.log(this.filteredRecipes);
         return this.filteredRecipes;
         
