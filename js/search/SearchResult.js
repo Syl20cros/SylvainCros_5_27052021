@@ -18,7 +18,9 @@
       recipe.ingredients.forEach((element) => {
         this.ingredients.add(element.ingredient);
       });
-      this.appareils.add(recipe.appliance);
+      recipe.appliance.forEach((element) => {
+        this.appareils.add(element);
+      });
       recipe.ustensils.forEach((element) => {
         this.ustensiles.add(element);
       });
