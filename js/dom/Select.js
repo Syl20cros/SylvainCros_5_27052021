@@ -83,7 +83,6 @@ class DomRechercheSecondaire {
       .getElementById("researchTag")
       .addEventListener("click", function (event) {
         const element = event.target;
-        //console.dir(element);
 
         // Si je click sur un element LI (ingredient, ustensiles ou materiels)
         if (element.classList.contains("research__liste__item")) {

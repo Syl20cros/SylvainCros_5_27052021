@@ -5,7 +5,7 @@ import Recipe from "../dom/Recipe.js";
 import DomRechercheSecondaire from "../dom/Select.js";
 import SearchMain from "./SearchMain.js";
 import SearchTag from "./SearchTag.js";
-import recipes from "../data/recipes.js";
+//import recipes from "../data/recipes.js";
 
 class SearchService {
   constructor() {

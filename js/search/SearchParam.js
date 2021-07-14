@@ -22,7 +22,7 @@ class SearchParam {
 
   // Recherche secondaire ok ou pas
   isValidSecondarySearch() {
-      return this.ingredients.size !== 0 || this.appareils.size !== 0 || this.ustensiles.size !== 0;
+    return this.ingredients.size !== 0 || this.appareils.size !== 0 || this.ustensiles.size !== 0;
   }
 
   //retourne un tableau des éléments selectionnés pour chaque catégorie

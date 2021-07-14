@@ -9,6 +9,7 @@ class SearchTag {
                 ...recipe.appliance,
                 ...recipe.ustensils
             ]);
+            console.log(recipe);
             
             let indexOfRecipe = recipe.id - 1;
 
