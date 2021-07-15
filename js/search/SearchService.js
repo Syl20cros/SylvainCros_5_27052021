@@ -21,7 +21,7 @@ class SearchService {
     this.searchResult = new SearchResult();
     this.mainInputNewValue = this.searchParam.mainInput;
     this.tagInputNewValue = this.searchParam.allSelected;
-    
+    this.searchResultFinal = this.recipes;
 
     //Utilisation du resultat precedent ou pas pour les inputs
     if ((this.mainInputNewValue.length < this.mainInputOldValue.length) // si nouvelle recherche contient moins de carractere que la precedente
