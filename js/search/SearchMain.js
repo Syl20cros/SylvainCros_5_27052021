@@ -15,11 +15,11 @@ class SearchMain {
                 this.filteredRecipes.add(recipe);
             }
             else {
-                recipe.ingredients.forEach((element) => {
+               recipe.ingredients.forEach((element) => {
                     if (element.ingredient.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").indexOf(inputValue) > -1) {
                         this.filteredRecipes.add(recipe);
                     }
-                }); 
+                });
             }
         });
 
@@ -35,7 +35,6 @@ class SearchMain {
         
         console.log(this.filteredRecipes);
         return this.filteredRecipes;
-        
     }
 }
 
