@@ -13,7 +13,6 @@ class SearchEvent {
     this.onKeyUpTagInput();
     this.onTagClick();
     this.onCloseTagSelected();
-    this.onLoadMain();
   }
 
   onKeyUpPrimarySearch() {
@@ -46,12 +45,7 @@ class SearchEvent {
       this.searchService.launchSearch();
     });
   }
-
-  onLoadMain() {
-    document.addEventListener("DOMContentLoaded", () => {
-      this.searchService.launchSearch();
-    });
-  }
+  
 }
 
 export default SearchEvent;

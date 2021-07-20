@@ -23,6 +23,10 @@ domSelectBuilder.dispatchEvent();
 domSelectBuilder.closeTagByX();
 
 
-/********************* recherche principale *********************************/
+/********************* recherche *********************************/
 const searchEvent = new SearchEvent();
 searchEvent.listen();
+
+
+/********************* Lancement la recherche a l'ouverture *********************************/
+searchEvent.searchService.launchSearch();

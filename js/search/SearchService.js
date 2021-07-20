@@ -15,6 +15,7 @@ class SearchService {
 
   launchSearch() {
     this.searchParam = new SearchParam();
+    console.log(this.searchParam);
     this.searchResult = new SearchResult();
     this.searchResultFinal = this.recipes;
     
@@ -33,14 +34,6 @@ class SearchService {
         this.searchResultFinal
       );
     }
-
-    /*if (this.searchParam.primarySearchValid() && this.searchParam.isValidSecondarySearch()) {
-      this.searchResultFinal =  SearchTag.searchByTag(   
-        this.searchParam,
-        this.searchResultFinal
-      );
-      console.log('3eme research');
-    }*/
 
     this.searchResult.buildSearchResult(this.searchResultFinal);
     this.buildDom(this.searchResult);
