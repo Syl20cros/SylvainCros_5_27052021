@@ -45,6 +45,17 @@ class SearchService {
       );
     }
 
+    //Afficher message resultat vide
+    if (this.searchResultFinal.size == 0 ) {
+      document.getElementById('messageRecipeNotFound').classList.add('showMessageRecipeNotFound');
+    } else {
+        document.getElementById('messageRecipeNotFound').classList.remove('showMessageRecipeNotFound');
+    }
+    if (this.searchParam.mainInput.toLowerCase() == 0) { //Supprime message si champ de recherche vide
+        document.getElementById('messageRecipeNotFound').classList.remove('showMessageRecipeNotFound');
+    }
+
+    
     this.mainInputOldValue = this.searchParam.mainInput; //deffinition du mainInputOldValue avant la nouvelle recherche
     this.tagInputOldValue = this.searchParam.allSelected; //deffinition du tagInputOldValue avant la nouvelle recherche
     this.searchResult.buildSearchResult(this.searchResultFinal);

@@ -3,13 +3,15 @@ import recipes from '../data/recipes.js';
 class SearchTag {
     static searchByTag(searchParam, searchResultFinal) {
         this.searchTagFiltered = new Set();
+        if (searchResultFinal.size == 0){
+            searchResultFinal = recipes;
+        }
         searchResultFinal.forEach(recipe => {
             recipe.allProduct = new Set([
                 ...recipe.ingredients.map(element => (element.ingredient)),
                 ...recipe.appliance,
                 ...recipe.ustensils
             ]);
-            console.log(recipe);
             
             let indexOfRecipe = recipe.id - 1;
 
