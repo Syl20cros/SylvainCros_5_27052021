@@ -29,32 +29,34 @@ class SearchParam {
   getIngredients() {
     const ingredients = new Set();
     const ingredientsDom = Array.from(
-      document.querySelectorAll("#ingredients .tagSelected")
+      document.querySelectorAll(".tagsSelectedItem--ingredient")
       );
     ingredientsDom.forEach((element) => {
-      ingredients.add(element.innerHTML);
+      ingredients.add(element.innerText);
     });
+    console.log(ingredients);
     return ingredients;
   }
 
   getAppareils() {
     const appareils = new Set();
     const appareilsDom = Array.from(
-      document.querySelectorAll("#appareils .tagSelected")
+      document.querySelectorAll(".tagsSelectedItem--appareil")
     );
     appareilsDom.forEach((element) => {
-      appareils.add(element.innerHTML);
+      appareils.add(element.innerText);
     });
+    console.log(appareils);
     return appareils;
   }
 
   getUstensiles() {
     const ustensiles = new Set();
     const ustensilesDom = Array.from(
-      document.querySelectorAll("#ustensiles .tagSelected")
+      document.querySelectorAll(".tagsSelectedItem--ustensile")
     );
     ustensilesDom.forEach((element) => {
-      ustensiles.add(element.innerHTML);
+      ustensiles.add(element.innerText);
     });
     return ustensiles;
   }
